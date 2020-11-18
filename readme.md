@@ -14,7 +14,7 @@ import (
 
 ## colored
 ```
-console.PrintColored("apple", console.danger)
+console.PrintColored("apple", console.Danger)
 ```
 
 <div style="background-color:black; padding:1rem;">
@@ -23,7 +23,7 @@ $>> <span style="color:red">apple</span>
 
 with Ln func is break line
 ```
-console.PrintColoredLn("apple", console.danger)
+console.PrintColoredLn("apple", console.Danger)
 ```
 
 ## emphasize
