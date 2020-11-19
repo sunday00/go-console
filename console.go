@@ -1,6 +1,8 @@
 package console
 
-import "fmt"
+import (
+	"fmt"
+)
 
 // PrintEmp returns string with divided lines
 func PrintEmp(str string) {
@@ -62,4 +64,28 @@ func PrintColoredLn(str interface{}, m Mode) {
 // PrintColoredF excute PrintColored with format
 func PrintColoredF(format string, m Mode, str ...interface{}) {
 	PrintColored(fmt.Sprintf(format, str...), m)
+}
+
+func PrintColoredRainbow(str string) {
+	colorOrder := []int{9, 202, 11, 10, 14, 12, 13}
+
+	runed := []rune(str)
+
+	for i := 0; i < len(runed); i++ {
+		colorNumber := colorOrder[i%7]
+		fmt.Printf("\033[38;5;%dm%c\033[0m", colorNumber, runed[i])
+	}
+
+	fmt.Println()
+}
+
+func PrintColoredRainbowAni(str interface{}) {
+	colorOrder := []int{9, 202, 11, 10, 14, 12, 13}
+	stred := fmt.Sprint(str)
+	for i := 0; i < len(stred); i++ {
+		colorNumber := colorOrder[i%7]
+		currentLetter := stred[i]
+		fmt.Printf("\033[38;5;%dm%c\033[0m", colorNumber, currentLetter)
+	}
+	fmt.Println()
 }
