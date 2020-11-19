@@ -58,3 +58,8 @@ func PrintColored(str interface{}, m Mode) {
 func PrintColoredLn(str interface{}, m Mode) {
 	PrintColored(fmt.Sprint(str)+"\n", m)
 }
+
+// PrintColoredF excute PrintColored with format
+func PrintColoredF(format string, m Mode, str ...interface{}) {
+	PrintColored(fmt.Sprintf(format, str...), m)
+}
