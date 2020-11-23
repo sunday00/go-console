@@ -89,3 +89,7 @@ func PrintColoredRainbowAni(str interface{}) {
 	}
 	fmt.Println()
 }
+
+func KeyValue(key string, val interface{}) {
+	fmt.Printf("\033[38;5;183m%s\033[0m : \033[38;5;117m%s\033[0m \n", key, val)
+}
